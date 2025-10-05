@@ -1,8 +1,6 @@
-sql
-
 CREATE TABLE user (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    email varchar(255) UNIQUE NOT NULL, 
+    email varchar(255) UNIQUE NOT NULL,
     username varchar(255) UNIQUE NOT NULL,
     password varchar(255) NOT NULL
 );
@@ -16,7 +14,7 @@ CREATE TABLE user_role (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER NOT NULL,
     role_id INTEGER NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES user(id),
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
     FOREIGN KEY (role_id) REFERENCES role(id)
 );
 
@@ -28,8 +26,10 @@ INSERT INTO role (name) VALUES
 ('USER'),
 ('MODERATOR');
 
+-- Hashed value for password "admin"
+-- bcrypt
 INSERT INTO user (email, username, password) VALUES
-('admin@admin.com', 'admin','admin');
+('admin@admin.com', 'admin','$2b$10$7RzJs.kF6VHuT2mzwxU5r.qFRJxzLtKPvJiwE9f2Xj7OTiX69K05e');
 
 INSERT INTO user_role (user_id, role_id)
 SELECT u.id, r.id
@@ -42,6 +42,7 @@ DROP TABLE role;
 DROP TABLE user_role;
 
 
+-- ignore everything below
 export async function isAdmin(userId: number): Promise<boolean> {
   const result = await db.query(`
     SELECT role_id 
