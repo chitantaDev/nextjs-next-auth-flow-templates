@@ -18,8 +18,20 @@ CREATE TABLE user_role (
     FOREIGN KEY (role_id) REFERENCES role(id)
 );
 
+CREATE TABLE email_verification (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    token varchar(255) UNIQUE NOT NULL,
+    email varchar(255) NOT NULL,
+    username varchar(255) NOT NULL,
+    password_hash varchar(255) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    expires_at DATETIME NOT NULL
+);
+
 CREATE INDEX idx_user_id ON user_role(user_id);
 CREATE INDEX idx_role_id ON user_role(role_id);
+CREATE INDEX idx_verification_token ON email_verification(token);
+CREATE INDEX idx_verification_email ON email_verification(email);
 
 INSERT INTO role (name) VALUES
 ('ADMIN'),
@@ -40,7 +52,7 @@ WHERE u.email = 'admin@admin.com' AND r.name = 'ADMIN';
 DROP TABLE user;
 DROP TABLE role;
 DROP TABLE user_role;
-
+DROP TABLE email_verification;
 
 -- ignore everything below
 export async function isAdmin(userId: number): Promise<boolean> {
