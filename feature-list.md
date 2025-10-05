@@ -1,3 +1,20 @@
+TODO:
+Document the templates setup:
+- all npm packages
+- sql creation script
+- database structure diagram
+- auth workflow
+- directory structure intro
+- enviroment variables / .env* setup
+- google smtp server setup: create account -> 2FA -> App Password -> create App + password -> paste into env
+- Database file location - Where SQLite file gets created
+- Database initialization - How to create the database file and run the SQL script
+- NextAuth configuration - Secret generation, URL setup
+- Node.js, Nextjs, NextAuth version requirements - Which version you used/recommend
+- Secret generation
+
+
+
 Features: 
 - Delete Account functionality (button in header)
 - 2 Pages, Home Page and Dummy Page to have back and forth navigation with buttons or something
