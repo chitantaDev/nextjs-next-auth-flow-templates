@@ -1,4 +1,3 @@
-// app/login/page.tsx
 'use client'
 import { useState, FormEvent, useEffect } from 'react'
 import { signIn } from 'next-auth/react'

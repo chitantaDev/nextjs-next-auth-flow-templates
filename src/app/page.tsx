@@ -2,6 +2,7 @@
 import styles from "./page.module.css";
 import {useSession} from "next-auth/react";
 import {useEffect} from "react";
+import Link from "next/link";
 
 export default function Home() {
    const {data: session, status} = useSession()
@@ -31,6 +32,7 @@ export default function Home() {
       <div className={styles.page}>
          <main className={styles.main}>
             <div>Welcome {userId}</div>
+            <Link href={"/dummy"}>navigate to dummy page</Link>
          </main>
       </div>
    );
