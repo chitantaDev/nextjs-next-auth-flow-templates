@@ -8,7 +8,7 @@ export default function LogoutButton() {
 
     return (
         <div style={{ position: 'fixed', top: '1rem', right: '1rem' }}>
-            <span style={{ marginRight: '1rem' }}>{session.user?.name}</span>
+            <span style={{ marginRight: '1rem' }}>{session.user?.role}</span>
             <button
                 onClick={() => signOut({ callbackUrl: '/' })}
                 style={{
