@@ -48,8 +48,8 @@ export async function GET(request: NextRequest) {
       // Clean up verification record
       await db.run('DELETE FROM email_verification WHERE token = ?', [token]);
 
-      // In app/api/verify-email/route.ts - change the last redirect line to:
-      return NextResponse.redirect(`http://localhost:3000/login?verified=true&email=${encodeURIComponent(verification.email)}`);
+// app/api/verify-email/route.ts - Update the redirect
+      return NextResponse.redirect('http://localhost:3000/login?verified=true&email=' + encodeURIComponent(verification.email));
    } catch (error) {
       console.error('Verification error:', error)
       return NextResponse.redirect('http://localhost:3000/register?error=verification-failed');

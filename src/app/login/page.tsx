@@ -20,8 +20,11 @@ export default function LoginForm() {
         if (verified === 'true' && verifiedEmail) {
             setShowSuccess(true)
             setEmail(decodeURIComponent(verifiedEmail))
+
+            // Clear the URL parameters to avoid showing success message on refresh
+            router.replace('/login', undefined)
         }
-    }, [searchParams])
+    }, [searchParams, router])
 
     const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -38,7 +41,8 @@ export default function LoginForm() {
             setError('Login failed. Please check your credentials.')
             setIsLoading(false)
         } else if (result?.ok) {
-            router.push('/')
+            // Use replace instead of push to remove login page from history
+            router.replace('/')  // Changed from router.push('/')
         }
     }
 
