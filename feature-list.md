@@ -16,6 +16,13 @@ Document the templates setup:
 
 
 Features: 
+- Role handling (currently no use case, no admin dashboard, no nothing, only user functionality. roles not needed rn)
+  - maybe it will be needed so not just anoyone can inject a custom user id from a postman client and change other ppls databases
+  or does the session provider provide authorized access and thats impossible to begin with
+  - no need to cover this. nextauth handles authorized access, no one else can access someonelses sql table
+- handle Loading state, insert skeletons or something to let the user know its loading
+  - maybe not always necessary cuz rn useSession runs anew on refresh as it should, but navigating throuhg the website will no destroy the session
+    so the data will be persisted in memory (in memory, do we need Zustand for global state management? idk, worth to consider for future use cases)
 - Delete Account functionality (button in header)
 - 2 Pages, Home Page and Dummy Page to have back and forth navigation with buttons or something
 - Registration needs 2 password fields so u can check if u misstyped
