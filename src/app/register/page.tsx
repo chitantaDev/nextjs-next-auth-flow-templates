@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, FormEvent } from 'react'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
 export default function RegisterForm() {
@@ -10,7 +9,6 @@ export default function RegisterForm() {
    const [password, setPassword] = useState('')
    const [error, setError] = useState('')
    const [success, setSuccess] = useState(false)
-   const router = useRouter()
 
    const handleRegister = async (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault()
@@ -35,7 +33,7 @@ export default function RegisterForm() {
          <div className="auth-container">
             <div className="auth-form">
                <h1>Check Your Email</h1>
-               <p>We've sent a verification link to <strong>{email}</strong></p>
+               <p>We&apos;ve sent a verification link to <strong>{email}</strong></p>
                <p>Click the link in the email to complete your registration.</p>
                <p className="auth-link">
                   Already verified? <Link href="/login">Login here</Link>

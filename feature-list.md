@@ -116,3 +116,9 @@ have to rent a server like for a java spring app, can i host for free? sqlite3 s
 4. **Delete account button** - You already planned this
 
 **That's it!** You're 95% compliant with minimal effort. Launch first, optimize compliance later when you have revenue.
+
+
+06.10.2025
+
+- make landingpage available to the public and protected user
+- always show header, when user is not logged in, dont display session.name and logout button, instead make login button that directs user to login page

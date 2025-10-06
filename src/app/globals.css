@@ -147,13 +147,13 @@ a {
 
 .auth-form input:focus {
   outline: none;
-  border-color: #3b82f6;
+  border-color: cadetblue;
 }
 
 .auth-form button {
   width: 100%;
   padding: 12px;
-  background: #3b82f6;
+  background: cadetblue;
   color: white;
   border: none;
   border-radius: 4px;
@@ -163,7 +163,7 @@ a {
 }
 
 .auth-form button:hover {
-  background: #2563eb;
+  background: cadetblue;
 }
 
 .auth-form button:disabled {
@@ -177,7 +177,7 @@ a {
 }
 
 .auth-link a {
-  color: #3b82f6;
+  color: cadetblue;
   text-decoration: none;
 }
 

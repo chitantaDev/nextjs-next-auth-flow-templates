@@ -42,6 +42,9 @@ export default function LoginForm() {
             setIsLoading(false)
         } else if (result?.ok) {
             // Use replace instead of push to remove login page from history
+            // prevents the user from navigating back to the login page after logging in
+            // FIXME: with the current middleware setup, if user still navigates back to login page with the browser back button
+            //  the session gets refetched, doesnt rly matter tbh, but it shouldnt be like that.
             router.replace('/')  // Changed from router.push('/')
         }
     }
@@ -83,7 +86,7 @@ export default function LoginForm() {
                </form>
 
                <p className="auth-link">
-                   Don't have an account? <Link href="/register">Register here</Link>
+                   Don&apos;t have an account? <Link href="/register">Register here</Link>
                </p>
 
                {error && (

@@ -2,11 +2,10 @@
 import styles from "./page.module.css";
 import {useSession} from "next-auth/react";
 import {useEffect} from "react";
-import Link from "next/link";
+import LandingPage from "@/app/components/landingPage/LandingPage";
 
 export default function Home() {
    const {data: session, status} = useSession()
-   const userId = session?.user.name
 
    useEffect(() => {
       if (status === 'loading') {
@@ -31,8 +30,7 @@ export default function Home() {
    return (
       <div className={styles.page}>
          <main className={styles.main}>
-            <div>Welcome {userId}</div>
-            <Link href={"/dummy"}>navigate to dummy page</Link>
+            <LandingPage/>
          </main>
       </div>
    );

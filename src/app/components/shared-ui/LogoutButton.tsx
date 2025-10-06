@@ -13,7 +13,7 @@ export default function LogoutButton() {
                 onClick={() => signOut({ callbackUrl: '/' })}
                 style={{
                     padding: '0.5rem 1rem',
-                    backgroundColor: '#dc2626',
+                    backgroundColor: 'darkgrey',
                     color: 'white',
                     border: 'none',
                     borderRadius: '4px',

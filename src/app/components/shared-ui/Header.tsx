@@ -31,6 +31,7 @@ export default function Header() {
                   <button
                      onClick={() => signOut({ callbackUrl: '/' })}
                      className="logout-btn"
+                     style={{backgroundColor: "cadetblue"}}
                   >
                      Logout
                   </button>
