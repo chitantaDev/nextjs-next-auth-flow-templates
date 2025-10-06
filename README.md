@@ -13,6 +13,7 @@
 - bcrypt.js
 - nodemailer
 - sqlite3
+- GoogleSMTP
 
 ## Lizenz
 This code is provided for reference purposes only.  
