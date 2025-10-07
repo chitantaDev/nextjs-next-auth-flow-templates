@@ -5,7 +5,7 @@
 ![Example Image](public/contractsetup.png)
 ![Example Image](public/preview.png)
 ![Example Image](public/email.png)
-![Example Image](public/emailPreview.png)
+![Example Image](public/myEmailPreview.png)
 ![Example Image](public/login.png)
 ![Example Image](public/register.png)
 ## Tech Stack
