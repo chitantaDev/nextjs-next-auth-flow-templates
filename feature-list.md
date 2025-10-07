@@ -130,3 +130,7 @@ have to rent a server like for a java spring app, can i host for free? sqlite3 s
     - and then send it out to the client
   - Then think about how to enable the client to sign it from his "email" ? directly from his mailbox?
     - or do i send the email with the pdf as a preview and a link to my website, where the client ON MY PAGE actually goes through and signs there 
+
+not optimized for phones
+- pdf preview also sucks on phone because the text gets compressed to the middle.
+- figure out how to have the same preview that u have when u open the contract on google mail
