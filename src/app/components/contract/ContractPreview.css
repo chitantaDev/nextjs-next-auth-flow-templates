@@ -1,5 +1,3 @@
-/* Contract Preview Dialog - Dark Mode Compatible */
-
 .dialog-overlay {
     position: fixed;
     inset: 0;
@@ -21,7 +19,7 @@
     max-height: 90vh;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(255, 255, 255, 0.1); /* subtle frame in dark mode */
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .dialog-header {
@@ -66,7 +64,6 @@
     flex: 1;
 }
 
-/* Input Field */
 .email-field input {
     width: 100%;
     padding: 0.5rem 0.75rem;
@@ -84,7 +81,6 @@
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
-/* Button */
 .send-button {
     display: flex;
     align-items: center;
@@ -111,4 +107,46 @@
 
 .contract-value {
     font-size: 18px;
+}
+
+
+.contract-preview-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.contract-section {
+    margin-bottom: 20px;
+}
+.contract-heading {
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.contract-value {
+    font-weight: bold;
+}
+.contract-party {
+    margin-left: 40px;
+}
+.contract-party-label {
+    margin-left: 40px;
+    font-style: italic;
+}
+.contract-signatures {
+    margin-top: 60px;
+}
+.signature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+.signature-line {
+    border-bottom: 1px solid #000;
+    margin-bottom: 5px;
+}
+.signature-label {
+    font-size: 12px;
+    text-align: center;
 }

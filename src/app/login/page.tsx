@@ -1,10 +1,10 @@
 'use client'
-import { useState, FormEvent, useEffect } from 'react'
+import { useState, FormEvent, useEffect, Suspense } from 'react'
 import { signIn } from 'next-auth/react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 
-export default function LoginForm() {
+function LoginFormContent() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
@@ -20,9 +20,7 @@ export default function LoginForm() {
         if (verified === 'true' && verifiedEmail) {
             setShowSuccess(true)
             setEmail(decodeURIComponent(verifiedEmail))
-
-            // Clear the URL parameters to avoid showing success message on refresh
-            router.replace('/login', undefined)
+            router.replace('/login')
         }
     }, [searchParams, router])
 
@@ -41,11 +39,7 @@ export default function LoginForm() {
             setError('Login failed. Please check your credentials.')
             setIsLoading(false)
         } else if (result?.ok) {
-            // Use replace instead of push to remove login page from history
-            // prevents the user from navigating back to the login page after logging in
-            // FIXME: with the current middleware setup, if user still navigates back to login page with the browser back button
-            //  the session gets refetched, doesnt rly matter tbh, but it shouldnt be like that.
-            router.replace('/')  // Changed from router.push('/')
+            router.replace('/')
         }
     }
 
@@ -96,5 +90,14 @@ export default function LoginForm() {
                )}
            </div>
        </div>
+    )
+}
+
+//deconstruct LoginForm and pass it to here so I don't have this error: useSearchParams() should be wrapped in a suspense boundary at page "/login"
+export default function Login() {
+    return (
+       <Suspense fallback={<div>Loading...</div>}>
+           <LoginFormContent />
+       </Suspense>
     )
 }

@@ -4,7 +4,8 @@
 ![Example Image](public/landingpage.png)
 ![Example Image](public/contractsetup.png)
 ![Example Image](public/preview.png)
-![Example Image](public/print.png)
+![Example Image](public/email.png)
+![Example Image](public/emailPreview.png)
 ![Example Image](public/login.png)
 ![Example Image](public/register.png)
 ## Tech Stack
@@ -14,6 +15,7 @@
 - nodemailer
 - sqlite3
 - GoogleSMTP
+- Puppeteer
 
 ## Lizenz
 This code is provided for reference purposes only.  
