@@ -1,6 +1,24 @@
 import { ContractData } from "@/app/components/contract-interface";
 import { contractContent } from "./contractText";
 
+interface PartyAddressInput {
+   clientGender?: string;
+   clientFirstName?: string;
+   clientLastName?: string;
+   clientStreet?: string;
+   clientStreetNumber?: string;
+   clientPostalCode?: string;
+   clientCity?: string;
+
+   contractorGender?: string;
+   contractorFirstName?: string;
+   contractorLastName?: string;
+   contractorStreet?: string;
+   contractorStreetNumber?: string;
+   contractorPostalCode?: string;
+   contractorCity?: string;
+}
+
 /**
  * Generates the HTML template for the contract
  * Used by both the preview component and PDF generation service
@@ -20,7 +38,7 @@ export function generateContractHtml(contractData: ContractData): string {
       jurisdiction = "_______",
    } = contractData.contractDetails;
 
-   const formatPartyAddress = (party: any, label: string) => `
+   const formatPartyAddress = (party: PartyAddressInput, label: string) => `
     <p class="contract-party">
       <strong class="contract-value">${party.clientGender || party.contractorGender} ${party.clientFirstName || party.contractorFirstName} ${party.clientLastName || party.contractorLastName}</strong><br />
       <strong class="contract-value">${party.clientStreet || party.contractorStreet} ${party.clientStreetNumber || party.contractorStreetNumber}</strong><br />

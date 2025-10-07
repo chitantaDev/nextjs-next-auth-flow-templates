@@ -122,3 +122,11 @@ have to rent a server like for a java spring app, can i host for free? sqlite3 s
 
 - make landingpage available to the public and protected user
 - always show header, when user is not logged in, dont display session.name and logout button, instead make login button that directs user to login page
+
+07.10.2025
+- Start thinkink about saving the PDFS
+  - before saving them, implement FES signature
+  - make the process for allowing the contractor (me, the current user) to FES sign 
+    - and then send it out to the client
+  - Then think about how to enable the client to sign it from his "email" ? directly from his mailbox?
+    - or do i send the email with the pdf as a preview and a link to my website, where the client ON MY PAGE actually goes through and signs there 
